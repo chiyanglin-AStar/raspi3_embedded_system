@@ -1,0 +1,7 @@
+backup/*
+src/*/build
+**/*.o
+**/*.d
+**/*.swp
+**/*.img
+**/*.elf
