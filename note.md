@@ -141,3 +141,12 @@ make versatile_defconfig
 make -j $(nproc)
 
 cp arch/arm/boot/zImage kernel7.img
+
+
+### Qemu verification 
+
+qemu-system-aarch64 -M raspi3 -kernel kernel8.img -nographic
+
+qemu-system-aarch64 -M raspi3 -kernel kernel8.img -nographic -serial file:uart0 -serial file:uart1
+
+qemu-system-aarch64 -m 128 -M raspi3 -serial null -serial mon:stdio -nographic -kernel build/kernel8.elf
